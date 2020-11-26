@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Contaminacion</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/resources/index.css}">
+</head>
+<body>
+	<h1>Contaminaci&oacute;n en Estados Unidos desde 2000 al año 2016.</h1>
+	<p>
+		Se han contabilizado un total de <span th:text="${numeroRegistros}"></span>
+		registros en Estados Unidos.
+	</p>
+	<h2>Estados de Estados Unidos</h2>
+	<ul>
+		<li th:each="estado:${estados}"><a th:text="${estado}" th:href="@{'/us/estados/estado?estado='+${estado}}"></a></li>
+	</ul>
+</body>
